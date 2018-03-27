@@ -21,7 +21,7 @@ class SelectableStory {
 
 extension SelectableStory {
     func createViewModel() -> StoryViewModel {
-        return StoryViewModel(title: self.story.title, createdAt: self.story.createdAt.description, switchIsOn: self.isSelected)
+        return StoryViewModel(title: self.story.title, createdAt: self.story.createdAt.formatted(), switchIsOn: self.isSelected)
     }
 }
 
