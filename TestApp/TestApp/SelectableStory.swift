@@ -24,3 +24,5 @@ extension SelectableStory {
         return StoryViewModel(title: self.story.title, createdAt: self.story.createdAt.description, switchIsOn: self.isSelected)
     }
 }
+
+

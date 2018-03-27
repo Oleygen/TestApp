@@ -35,9 +35,7 @@ class ViewController: UIViewController {
             }
         }
     }
-    
-    
-    
+
     
     private func setupTableView() {
         let tableView = UITableView()
@@ -86,8 +84,8 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: ViewController.cellIdentifier) as? StoryTableViewCell
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: ViewController.cellIdentifier) as? StoryTableViewCell
+        cell?.delegate = self
         cell?.setup(with: self.selectableStories[indexPath.row].createViewModel())
         return cell!
     }

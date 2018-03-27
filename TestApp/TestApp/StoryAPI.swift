@@ -16,7 +16,6 @@ class StoryAPI: NSObject {
             if let data = data {
                 let decoder = JSONDecoder()
                 let formatter = DateFormatter()
-                let locale = formatter.locale
                 formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.000Z"
                 formatter.locale = Locale(identifier: "en_US_POSIX")
                 decoder.dateDecodingStrategy = .formatted(formatter)

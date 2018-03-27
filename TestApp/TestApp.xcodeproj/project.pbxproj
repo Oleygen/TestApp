@@ -14,7 +14,6 @@
 		588C1FD2206A42D1000507AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 588C1FD0206A42D1000507AA /* LaunchScreen.storyboard */; };
 		588C1FDA206A434D000507AA /* StoryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588C1FD9206A434D000507AA /* StoryAPI.swift */; };
 		588C1FDC206A444B000507AA /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588C1FDB206A444B000507AA /* Story.swift */; };
-		588C1FDE206A44E8000507AA /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588C1FDD206A44E8000507AA /* Data+Extension.swift */; };
 		588C1FE0206A4E23000507AA /* StoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588C1FDF206A4E23000507AA /* StoryResponse.swift */; };
 		588C1FE2206A5D42000507AA /* SelectableStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588C1FE1206A5D42000507AA /* SelectableStory.swift */; };
 		588C1FE4206A5ED4000507AA /* StoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 588C1FE3206A5ED4000507AA /* StoryCell.xib */; };
@@ -32,7 +31,6 @@
 		588C1FD3206A42D1000507AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		588C1FD9206A434D000507AA /* StoryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryAPI.swift; sourceTree = "<group>"; };
 		588C1FDB206A444B000507AA /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
-		588C1FDD206A44E8000507AA /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		588C1FDF206A4E23000507AA /* StoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryResponse.swift; sourceTree = "<group>"; };
 		588C1FE1206A5D42000507AA /* SelectableStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableStory.swift; sourceTree = "<group>"; };
 		588C1FE3206A5ED4000507AA /* StoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryCell.xib; sourceTree = "<group>"; };
@@ -80,7 +78,6 @@
 				588C1FD9206A434D000507AA /* StoryAPI.swift */,
 				588C1FDB206A444B000507AA /* Story.swift */,
 				588C1FE1206A5D42000507AA /* SelectableStory.swift */,
-				588C1FDD206A44E8000507AA /* Data+Extension.swift */,
 				588C1FE3206A5ED4000507AA /* StoryCell.xib */,
 				588C1FE5206A5FF2000507AA /* StoryTableViewCell.swift */,
 				588C1FE9206A60FD000507AA /* StoryViewModel.swift */,
@@ -166,7 +163,6 @@
 				588C1FE2206A5D42000507AA /* SelectableStory.swift in Sources */,
 				588C1FCA206A42D1000507AA /* ViewController.swift in Sources */,
 				588C1FDA206A434D000507AA /* StoryAPI.swift in Sources */,
-				588C1FDE206A44E8000507AA /* Data+Extension.swift in Sources */,
 				588C1FC8206A42D1000507AA /* AppDelegate.swift in Sources */,
 				588C1FDC206A444B000507AA /* Story.swift in Sources */,
 				588C1FE6206A5FF2000507AA /* StoryTableViewCell.swift in Sources */,

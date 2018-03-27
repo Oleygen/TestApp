@@ -18,9 +18,7 @@ class StoryResponse : NSObject, Decodable {
         
         let container = try! decoder.container(keyedBy: CodingKeys.self)
         let arrayContainer = try container.decode([Story].self, forKey: .hits)
-        self.hits = arrayContainer
-        print(arrayContainer)
-        
+        self.hits = arrayContainer        
     }
 
     enum CodingKeys : String, CodingKey {
