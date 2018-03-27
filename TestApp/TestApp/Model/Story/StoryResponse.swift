@@ -24,7 +24,4 @@ class StoryResponse : NSObject, Decodable {
         let arrayContainer = try container.decode([Story].self, forKey: .hits)
         self.hits = arrayContainer        
     }
-
-    
-
 }
