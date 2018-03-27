@@ -12,5 +12,4 @@ struct StoryViewModel {
     let title : String
     let createdAt : String
     let switchIsOn : Bool
-    
 }

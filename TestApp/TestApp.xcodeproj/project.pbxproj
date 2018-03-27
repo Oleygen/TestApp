@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		585840F8206A7FE700983CCC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585840F7206A7FE700983CCC /* Extensions.swift */; };
+		585840FF206A974F00983CCC /* StoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585840FE206A974F00983CCC /* StoryModel.swift */; };
+		58584101206A983200983CCC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58584100206A983200983CCC /* NetworkManager.swift */; };
 		588C1FC8206A42D1000507AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588C1FC7206A42D1000507AA /* AppDelegate.swift */; };
-		588C1FCA206A42D1000507AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588C1FC9206A42D1000507AA /* ViewController.swift */; };
-		588C1FCD206A42D1000507AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 588C1FCB206A42D1000507AA /* Main.storyboard */; };
+		588C1FCA206A42D1000507AA /* StoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588C1FC9206A42D1000507AA /* StoriesViewController.swift */; };
 		588C1FCF206A42D1000507AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 588C1FCE206A42D1000507AA /* Assets.xcassets */; };
 		588C1FD2206A42D1000507AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 588C1FD0206A42D1000507AA /* LaunchScreen.storyboard */; };
-		588C1FDA206A434D000507AA /* StoryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588C1FD9206A434D000507AA /* StoryAPI.swift */; };
 		588C1FDC206A444B000507AA /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588C1FDB206A444B000507AA /* Story.swift */; };
 		588C1FE0206A4E23000507AA /* StoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588C1FDF206A4E23000507AA /* StoryResponse.swift */; };
 		588C1FE2206A5D42000507AA /* SelectableStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588C1FE1206A5D42000507AA /* SelectableStory.swift */; };
@@ -24,14 +24,14 @@
 
 /* Begin PBXFileReference section */
 		585840F7206A7FE700983CCC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		585840FE206A974F00983CCC /* StoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryModel.swift; sourceTree = "<group>"; };
+		58584100206A983200983CCC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		588C1FC4206A42D1000507AA /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		588C1FC7206A42D1000507AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		588C1FC9206A42D1000507AA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		588C1FCC206A42D1000507AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		588C1FC9206A42D1000507AA /* StoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesViewController.swift; sourceTree = "<group>"; };
 		588C1FCE206A42D1000507AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		588C1FD1206A42D1000507AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		588C1FD3206A42D1000507AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		588C1FD9206A434D000507AA /* StoryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryAPI.swift; sourceTree = "<group>"; };
 		588C1FDB206A444B000507AA /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		588C1FDF206A4E23000507AA /* StoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryResponse.swift; sourceTree = "<group>"; };
 		588C1FE1206A5D42000507AA /* SelectableStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableStory.swift; sourceTree = "<group>"; };
@@ -51,6 +51,67 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		585840F9206A955000983CCC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				585840FD206A973D00983CCC /* Story */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		585840FA206A956500983CCC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				588C1FC9206A42D1000507AA /* StoriesViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		585840FB206A957F00983CCC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				588C1FE3206A5ED4000507AA /* StoryCell.xib */,
+				588C1FE5206A5FF2000507AA /* StoryTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		585840FC206A95A200983CCC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				585840F7206A7FE700983CCC /* Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		585840FD206A973D00983CCC /* Story */ = {
+			isa = PBXGroup;
+			children = (
+				588C1FE9206A60FD000507AA /* StoryViewModel.swift */,
+				588C1FE1206A5D42000507AA /* SelectableStory.swift */,
+				588C1FDF206A4E23000507AA /* StoryResponse.swift */,
+				588C1FDB206A444B000507AA /* Story.swift */,
+				585840FE206A974F00983CCC /* StoryModel.swift */,
+			);
+			path = Story;
+			sourceTree = "<group>";
+		};
+		58584102206A984000983CCC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				58584103206A984500983CCC /* Network */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		58584103206A984500983CCC /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				58584100206A983200983CCC /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		588C1FBB206A42D1000507AA = {
 			isa = PBXGroup;
 			children = (
@@ -70,20 +131,15 @@
 		588C1FC6206A42D1000507AA /* TestApp */ = {
 			isa = PBXGroup;
 			children = (
+				58584102206A984000983CCC /* Services */,
+				585840FC206A95A200983CCC /* Utils */,
+				585840FB206A957F00983CCC /* View */,
+				585840FA206A956500983CCC /* Controller */,
+				585840F9206A955000983CCC /* Model */,
 				588C1FC7206A42D1000507AA /* AppDelegate.swift */,
-				588C1FDF206A4E23000507AA /* StoryResponse.swift */,
-				588C1FC9206A42D1000507AA /* ViewController.swift */,
-				588C1FCB206A42D1000507AA /* Main.storyboard */,
 				588C1FCE206A42D1000507AA /* Assets.xcassets */,
 				588C1FD0206A42D1000507AA /* LaunchScreen.storyboard */,
 				588C1FD3206A42D1000507AA /* Info.plist */,
-				588C1FD9206A434D000507AA /* StoryAPI.swift */,
-				588C1FDB206A444B000507AA /* Story.swift */,
-				588C1FE1206A5D42000507AA /* SelectableStory.swift */,
-				588C1FE3206A5ED4000507AA /* StoryCell.xib */,
-				588C1FE5206A5FF2000507AA /* StoryTableViewCell.swift */,
-				588C1FE9206A60FD000507AA /* StoryViewModel.swift */,
-				585840F7206A7FE700983CCC /* Extensions.swift */,
 			);
 			path = TestApp;
 			sourceTree = "<group>";
@@ -150,7 +206,6 @@
 				588C1FD2206A42D1000507AA /* LaunchScreen.storyboard in Resources */,
 				588C1FE4206A5ED4000507AA /* StoryCell.xib in Resources */,
 				588C1FCF206A42D1000507AA /* Assets.xcassets in Resources */,
-				588C1FCD206A42D1000507AA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,25 +220,18 @@
 				585840F8206A7FE700983CCC /* Extensions.swift in Sources */,
 				588C1FE0206A4E23000507AA /* StoryResponse.swift in Sources */,
 				588C1FE2206A5D42000507AA /* SelectableStory.swift in Sources */,
-				588C1FCA206A42D1000507AA /* ViewController.swift in Sources */,
-				588C1FDA206A434D000507AA /* StoryAPI.swift in Sources */,
+				58584101206A983200983CCC /* NetworkManager.swift in Sources */,
+				588C1FCA206A42D1000507AA /* StoriesViewController.swift in Sources */,
 				588C1FC8206A42D1000507AA /* AppDelegate.swift in Sources */,
 				588C1FDC206A444B000507AA /* Story.swift in Sources */,
 				588C1FE6206A5FF2000507AA /* StoryTableViewCell.swift in Sources */,
+				585840FF206A974F00983CCC /* StoryModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		588C1FCB206A42D1000507AA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				588C1FCC206A42D1000507AA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		588C1FD0206A42D1000507AA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

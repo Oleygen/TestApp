@@ -8,25 +8,23 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class StoriesViewController: UIViewController {
+    
+    // MARK: - Properties
     static private let cellNibName = "StoryCell"
     static private let cellIdentifier = "StoryTableViewCell"
     
     weak var tableView : UITableView!
-    var api = StoryAPI()
+    var model = StoryModel()
     
-    var selectableStories: [SelectableStory] = []
-    var selectedCount : Int {
-        return selectableStories.filter({$0.isSelected}).count
-    }
+    // MARK: - UIViewController lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setupTableView()
         self.updateNavigationBar(count: 0)
-        api.fetchStories { (success, stories, error) in
+        self.model.fetchStories { (success, error) in
             if success {
-                self.selectableStories = stories!.map({return SelectableStory(item:$0)})
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
@@ -35,7 +33,8 @@ class ViewController: UIViewController {
             }
         }
     }
-
+    
+    // MARK: - Private methods
     
     private func setupTableView() {
         let tableView = UITableView()
@@ -47,10 +46,10 @@ class ViewController: UIViewController {
             self.tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
             self.tableView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
             self.tableView.rightAnchor.constraint(equalTo: self.view.rightAnchor)
-            
             ])
+        
         self.tableView.translatesAutoresizingMaskIntoConstraints = false
-        self.tableView.register(UINib.init(nibName: ViewController.cellNibName, bundle: nil), forCellReuseIdentifier: ViewController.cellIdentifier)
+        self.tableView.register(UINib.init(nibName: StoriesViewController.cellNibName, bundle: nil), forCellReuseIdentifier: StoriesViewController.cellIdentifier)
         
         self.tableView.estimatedRowHeight = 80
         self.tableView.rowHeight = UITableViewAutomaticDimension
@@ -60,9 +59,9 @@ class ViewController: UIViewController {
     
     private func didSelectCell(at indexPath : IndexPath) {
         let index = indexPath.row
-        self.selectableStories[index].isSelected = !self.selectableStories[index].isSelected
+        self.model.selectableStories[index].isSelected = !self.model.selectableStories[index].isSelected
         self.tableView.reloadRows(at: [indexPath], with: .automatic)
-        self.updateNavigationBar(count: self.selectedCount)
+        self.updateNavigationBar(count: self.model.selectedCount)
     }
     
     private func updateNavigationBar(count: Int) {
@@ -70,7 +69,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController : StoryTableViewCellDelegate {
+extension StoriesViewController : StoryTableViewCellDelegate {
     func didToggleSwitch(cell: StoryTableViewCell) {
         if let indexPath = self.tableView.indexPath(for: cell) {
             self.didSelectCell(at: indexPath)
@@ -78,20 +77,20 @@ extension ViewController : StoryTableViewCellDelegate {
     }
 }
 
-extension ViewController : UITableViewDelegate, UITableViewDataSource {
+extension StoriesViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return selectableStories.count
+        return self.model.selectableStories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ViewController.cellIdentifier) as? StoryTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: StoriesViewController.cellIdentifier) as? StoryTableViewCell
         cell?.delegate = self
-        cell?.setup(with: self.selectableStories[indexPath.row].createViewModel())
+        cell?.setup(with: self.model.selectableStories[indexPath.row].createViewModel())
         return cell!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       self.didSelectCell(at: indexPath)
+        self.didSelectCell(at: indexPath)
         
     }
     

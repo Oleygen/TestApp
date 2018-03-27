@@ -8,14 +8,19 @@
 
 import UIKit
 
-
-
-
-
 class Story: NSObject, Decodable {
+    
+    //  MARK: - Inner types
+    enum CodingKeys: String, CodingKey {
+        case title = "title"
+        case createAt = "created_at"
+    }
+    
+    // MARK: - Properties
     let createdAt : Date
     let title : String
     
+    // MARK: - Constructors
     init(createdAt: Date, title:String) {
         self.createdAt = createdAt
         self.title = title
@@ -28,10 +33,7 @@ class Story: NSObject, Decodable {
         self.createdAt = date
     }
 
-    enum CodingKeys: String, CodingKey {
-        case title = "title"
-        case createAt = "created_at"
-    }
+    
 }
 
 

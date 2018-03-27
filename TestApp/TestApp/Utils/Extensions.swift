@@ -11,12 +11,10 @@ import Foundation
 extension Date {
     func formatted() -> String{
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss +zzzz" // This formate is input formated .
         
         let formateDate = self
-        dateFormatter.dateFormat = "dd-MM-yyyy" // Output Formated
+        dateFormatter.dateFormat = "dd-MM-yyyy"
         
-        print ("Print :\(dateFormatter.string(from: formateDate))")//Print :02-02-2018
         return dateFormatter.string(from: formateDate)
     }
 }

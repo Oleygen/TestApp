@@ -9,11 +9,15 @@
 import Foundation
 
 class StoryResponse : NSObject, Decodable {
+    // MARK: - Inner types
+    enum CodingKeys : String, CodingKey {
+        case hits
+    }
     
-    
-    
+    // MARK: - Properties
     let hits : [Story]
     
+    // MARK: - Methodds
     required init(from decoder: Decoder) throws {
         
         let container = try! decoder.container(keyedBy: CodingKeys.self)
@@ -21,9 +25,6 @@ class StoryResponse : NSObject, Decodable {
         self.hits = arrayContainer        
     }
 
-    enum CodingKeys : String, CodingKey {
-        case hits
-    }
-   
     
+
 }

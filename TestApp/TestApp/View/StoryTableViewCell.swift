@@ -14,11 +14,13 @@ protocol StoryTableViewCellDelegate: class {
 
 class StoryTableViewCell: UITableViewCell {
     
-    
+    // MARK: - Properties
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var createdAtLabel: UILabel!
     @IBOutlet weak var selectionSwitch: UISwitch!
     weak var delegate : StoryTableViewCellDelegate?
+    
+    // MARK: - Methods
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

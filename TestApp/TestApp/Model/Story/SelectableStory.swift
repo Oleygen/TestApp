@@ -9,14 +9,15 @@
 import Foundation
 
 class SelectableStory {
+    
+    // MARK: - Properties
     private var story : Story
     var isSelected : Bool = false
     
+    // MARK: - Constructors
     init(item: Story) {
         self.story = item
     }
-    
-    
 }
 
 extension SelectableStory {
